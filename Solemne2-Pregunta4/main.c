@@ -99,10 +99,10 @@ void calculaAnchuraPorNivel(Nodo* aux, int nivel, int* contador){
 }
 
 int encuentraMayor(int* arr, int n){
-    int mayor = arr[0];
+    int mayor = 0;
     for(int i = 0; i < n; i++){
-        if(mayor < arr[i]){
-            mayor = arr[i];
+        if(arr[mayor]< arr[i]){
+            mayor = i;
         }
     }
     
