@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Estructura que representa un Nodo en el árbol, esta también representa la raiz del árbol.
+//Estructura que representa un Nodo en el árbol.
+//Representa la raiz de los subarboles "izq" y "der"
 typedef struct Nodo{
     int valor;
     struct Nodo *izq;
@@ -18,25 +19,25 @@ void posorden(Nodo *aux);
 /**
  * @brief Función recursiva utilizada para contar los nodos por nivel,
  *        estos son almacenados en el arreglo "int *contador"
- * @param aux Nodo desde el que se comnezará a realizar el recorrido
- * @param nivel el nivel actual, este irá aumentando a medida que se vaya recorriendo el árbol.
- * @param contador Arreglo que contendrá la cantidad de nodos por nivel, el indice representa el nivel
+ * @param aux - Nodo desde el que se comenzará a realizar el recorrido
+ * @param nivel - El nivel actual, este irá aumentando a medida que se vaya recorriendo el árbol.
+ * @param contador - Arreglo que contendrá la cantidad de nodos por nivel, el indice representa el nivel
  */
 void calculaAnchuraPorNivel(Nodo *aux, int nivel, int *contador);
 
 /**
- * @brief Función que encuentra el número más alto en un arreglo,
+ * @brief Función que encuentra el indice del número más alto en un arreglo,
  *        con el fin de encontrarel nivel con más nodos (más ancho)
- * @param arr Arreglo en el que se buscará el valor
- * @return retorna el valor mayor en el arreglo
+ * @param arr - Arreglo en el que se buscará el valor
+ * @return - Retorna el valor mayor en el arreglo
  */
 int encuentraMayor(int* arr, int n);
 
 /**
  * @brief Elimina los nodos hoja del nivel especificado por "int nivel"
  * @param aux Nodo actual
- * @param nivel nivel buscado
- * @param nivel_aux nivel actual
+ * @param nivel - nivel buscado
+ * @param nivel_aux - nivel actual
  */
 void eliminarHojasPorNivel(Nodo *aux, int nivel, int nivel_aux);
 
